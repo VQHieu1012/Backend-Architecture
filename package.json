@@ -1,0 +1,25 @@
+{
+  "name": "backend-architecture",
+  "version": "1.0.0",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "compression": "^1.7.4",
+    "helmet": "^7.1.0",
+    "mongoose": "^8.6.1",
+    "morgan": "^1.10.0"
+  }
+}
