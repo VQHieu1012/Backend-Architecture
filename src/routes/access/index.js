@@ -2,10 +2,12 @@
 
 const express = require('express');
 const accessController = require('../../controllers/access.controller');
-const router = express.Router()
+const router = express.Router();
+const {asyncHandler} = require('../../auth/checkAuth')
 
 // signUp
-router.post('/shop/signup', accessController.signUp)
+console.log('Come to post api signup')
+router.post('/shop/signup', asyncHandler(accessController.signUp))
 
 //
 

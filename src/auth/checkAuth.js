@@ -19,11 +19,12 @@ const apiKey = async (req, res, next) => {
         const objKey = await findById(key)
         if (!objKey) {
             return res.status(403).json({
-                message: 'Forbidden Error'
+                message: 'Forbidden Error in Finding ID'
             })
         }
 
         req.objKey = objKey
+        console.log('Check objKey ok!')
         return next()
     } catch (error) {
         
@@ -40,15 +41,27 @@ const permission = ( permission ) => {
 
         console.log(`Permission::`, req.objKey.permissions)
         const validPermission = req.objKey.permissions.includes(permission)
+        
         if (!validPermission) {
             return res.status(403).json({
                 message: 'Permission denied!'
             })
+        } else {
+            console.log('Check permission ok!')
+            next()
         }
+        
+    }
+}
+
+const asyncHandler = fn => {
+    return (req, res, next) => {
+        fn(req, res, next).catch(next)
     }
 }
 
 module.exports = {
     apiKey,
-    permission
+    permission,
+    asyncHandler
 }
