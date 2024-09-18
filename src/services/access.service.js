@@ -18,6 +18,12 @@ const RoleShop = {
 
 class AccessService {
 
+    static logout = async ( {keyStore} ) => {
+        const delKey = await KeyTokenService.removeKeyById( keyStore._id )
+        console.log({ delKey })
+        return delKey
+    }
+
     /* 
     1 - check email in dbs
     2 - match password
@@ -70,7 +76,7 @@ class AccessService {
             if(holderShop) {
                 throw new BadRequestError('Error: Shop already existed!!!')
             }
-
+            
             const passwordHash = await bcrypt.hash(password, 10)
             console.log('Hashes password!!!')
 

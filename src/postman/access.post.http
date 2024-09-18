@@ -4,23 +4,32 @@
 
 # POST {{url_dev}}/shop/signup
 # Content-Type: application/json
-# x-api-key : ff963615b5ddeb91ed2a1dd671c383b7589a130e07c2a3736a9ebcd34444edd0a6355e6bc2043ed84326e3bd37793685166168a9313c44c75908c64d11cf5d2e
+# x-api-key : 64050c9a9480f0a01b20693b93a1c908e143e826cbfe3fcf225dc2f43bbe0e638d4f8a726edac5901f431e5632b48aa83389aea6126332fbfb49ab909fc8e7e2
 
 # {
-#     "name": "Shop2 TIP",
-#     "email": "shop2tipjs@gmail.com",
+#     "name": "ShopTIP",
+#     "email": "shoptipjs@gmail.com",
 #     "password": "abc123"
 # }
 
-// login
-POST {{url_dev}}/shop/login
+# POST {{url_dev}}/shop/login
+# Content-Type: application/json
+# x-api-key : 64050c9a9480f0a01b20693b93a1c908e143e826cbfe3fcf225dc2f43bbe0e638d4f8a726edac5901f431e5632b48aa83389aea6126332fbfb49ab909fc8e7e2
+
+# {
+#     "name": "ShopTIP",
+#     "email": "shoptipjs@gmail.com",
+#     "password": "abc123"
+# }
+
+POST {{url_dev}}/shop/logout
 Content-Type: application/json
-x-api-key : //
+x-client-id: 66eaf2e4e233391bb23746b3
+x-api-key : 64050c9a9480f0a01b20693b93a1c908e143e826cbfe3fcf225dc2f43bbe0e638d4f8a726edac5901f431e5632b48aa83389aea6126332fbfb49ab909fc8e7e2
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVhZjJlNGUyMzMzOTFiYjIzNzQ2YjMiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY2NzgwMjIsImV4cCI6MTcyNjg1MDgyMn0.D0JivwyPld2zdDz52ghhsbG1y1Jy0j738k2hiube-7Y
 
 {
-    "name": "Shop2 TIP",
-    "email": "shop2tipjs@gmail.com",
+    "name": "ShopTIP",
+    "email": "shoptipjs@gmail.com",
     "password": "abc123"
 }
-
-
