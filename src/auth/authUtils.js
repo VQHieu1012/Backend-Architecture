@@ -58,8 +58,11 @@ const authentication = asyncHandler( async (req, res, next) => {
 
     // 2
     const keyStore = await findByUserId( userId )
-    if (!keyStore)  throw new NotFoundError('Not found keyStore')
-
+    if (!keyStore)  {
+        console.log(keyStore)
+        console.log('checkpoint 3')
+        throw new NotFoundError('Not found keyStore')
+    }
     // 3 verify token
     const accessToken = req.headers[HEADER.AUTHORIZATION]
     if (!accessToken)  throw new AuthFailureError('Invalid Request')
@@ -78,7 +81,12 @@ const authentication = asyncHandler( async (req, res, next) => {
     }
 })
 
+const verifyJWT = async (token, keySecret) => {
+    return await JWT.verify(token, keySecret)
+}
+
 module.exports = {
     createTokenPair,
-    authentication
+    authentication,
+    verifyJWT
 }
