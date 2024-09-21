@@ -24,7 +24,7 @@
 
 # POST {{url_dev}}/shop/logout
 # Content-Type: application/json
-# x-client-id: 66eaf2e4e233391bb23746b3
+# x-client-id: 66ec710ee3d8c659f9208557
 # x-api-key : 64050c9a9480f0a01b20693b93a1c908e143e826cbfe3fcf225dc2f43bbe0e638d4f8a726edac5901f431e5632b48aa83389aea6126332fbfb49ab909fc8e7e2
 # authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVjNzEwZWUzZDhjNjU5ZjkyMDg1NTciLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY3NzI2NTksImV4cCI6MTcyNjk0NTQ1OX0.LfWVc38zoG_Dc3fdnweZt7PJ01tu6v_0NdTQxRu3dOg
 
@@ -36,13 +36,15 @@
 
 POST {{url_dev}}/shop/handlerRefreshToken
 Content-Type: application/json
-x-client-id: 66ec710ee3d8c659f9208557
+x-client-id: 66eeb029d7588f665a0b5add
 x-api-key : 6338e071363abedb525a51516bbbffc0bb8ebd8ee9109497814bc9f44eb7a0ab941186fe5c67dee14e6ee4e68402bf34cfe8515d06426806110a1e9b7e2fb889
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVjNzEwZWUzZDhjNjU5ZjkyMDg1NTciLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY3NzQ4NDUsImV4cCI6MTcyNjk0NzY0NX0.dLeFYcR1c_5mhWy6_oTV3j_YrodmK1r8783U2-R1AWU
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVlYjAyOWQ3NTg4ZjY2NWEwYjVhZGQiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY5Mjg2NTMsImV4cCI6MTcyNzEwMTQ1M30.EUaq8RnzWbrTvZJFebc1IRYl9dyqoUF4JXQt2uopqyU
+x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVlYjAyOWQ3NTg4ZjY2NWEwYjVhZGQiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY5Mjg2NTMsImV4cCI6MTcyNzUzMzQ1M30.CPP0s9EcIFFSG5ctMZD61n8AM_nQHsyxtGWZGP4iLkM
+
 
 {
     "name": "ShopTIP",
     "email": "shoptipjs@gmail.com",
     "password": "abc123",
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVjNzEwZWUzZDhjNjU5ZjkyMDg1NTciLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY3NzQ4NDUsImV4cCI6MTcyNzM3OTY0NX0.5m_kispC_DNcqJZgqjpu9wbom5lYPNbIkk62DF5Jxh8"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVlYjAyOWQ3NTg4ZjY2NWEwYjVhZGQiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY5Mjg2NTMsImV4cCI6MTcyNzUzMzQ1M30.CPP0s9EcIFFSG5ctMZD61n8AM_nQHsyxtGWZGP4iLkM"
 }

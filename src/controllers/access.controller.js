@@ -2,14 +2,25 @@
 
 const AccessService = require("../services/access.service");
 const {OK, CREATED, SuccessResponse} = require('../core/success.response');
+const { keys } = require("lodash");
 
 class AccessController {
 
     handlerRefreshToken = async (req, res, next) => {
-        console.log('checkpoint')
+        // console.log('checkpoint')
+        // new SuccessResponse({
+        //     message: 'Get token success !',
+        //     metadata: await AccessService.handlerRefreshToken( req.body.refreshToken )
+        // }).send(res)
+
+        // v2 fixed
         new SuccessResponse({
-            message: 'Get token success !',
-            metadata: await AccessService.handlerRefreshToken( req.body.refreshToken )
+            message: 'Get token success!',
+            metadata: await AccessService.handlerRefreshTokenV2({
+                refreshToken: req.refreshToken,
+                user: req.user,
+                keyStore: req.keyStore
+            })
         }).send(res)
     }
 

@@ -20,8 +20,40 @@ const RoleShop = {
 class AccessService {
 
     // check if this token is used
+    static handlerRefreshTokenV2 = async ( {keyStore, user, refreshToken}) => {
+
+        const { userId, email } = user;
+        console.log(typeof(keyStore.refreshTokensUsed))
+        if (keyStore.refreshTokensUsed.includes(refreshToken)){
+            await KeyTokenService.deleteKeyById(userId)
+            throw new ForbiddenError('Something wrong happened! Pls re-login!')
+        }
+        console.log('check1')
+        if (keyStore.refreshToken !== refreshToken) throw new AuthFailureError('Shop is not regristered!')
+
+        const foundShop = await findByEmail({email})
+        if (!foundShop) throw new AuthFailureError('Shop is not regristered!')
+
+        // create 1 cap moi
+        const tokens = await createTokenPair({userId, email}, keyStore.publicKey, keyStore.privateKey)
+        // update tokens
+        await keyStore.updateOne({
+            $set: {
+                refreshToken: tokens.refreshToken
+            },
+            $addToSet: {
+                refreshTokensUsed: refreshToken // da duoc su dung de lay token moi
+            }
+        })
+
+        return {
+            user,
+            tokens
+        }
+    }
+
+    // check if this token is used
     static handlerRefreshToken = async ( refreshToken) => {
-        console.log('checkpint 2')
         const foundToken = await KeyTokenService.findByRefreshTokenUsed( refreshToken )
         
         // kiem tra xem token nay da duoc su dung hay chua, neu co xoa Key cua user nay
