@@ -34,17 +34,41 @@
 #     "password": "abc123"
 # }
 
-POST {{url_dev}}/shop/handlerRefreshToken
+# POST {{url_dev}}/shop/handlerRefreshToken
+# Content-Type: application/json
+# x-client-id: 66eeb029d7588f665a0b5add
+# x-api-key : 6338e071363abedb525a51516bbbffc0bb8ebd8ee9109497814bc9f44eb7a0ab941186fe5c67dee14e6ee4e68402bf34cfe8515d06426806110a1e9b7e2fb889
+# authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVlYjAyOWQ3NTg4ZjY2NWEwYjVhZGQiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY5Mjg2NTMsImV4cCI6MTcyNzEwMTQ1M30.EUaq8RnzWbrTvZJFebc1IRYl9dyqoUF4JXQt2uopqyU
+# x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVlYjAyOWQ3NTg4ZjY2NWEwYjVhZGQiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY5Mjg2NTMsImV4cCI6MTcyNzUzMzQ1M30.CPP0s9EcIFFSG5ctMZD61n8AM_nQHsyxtGWZGP4iLkM
+
+
+# {
+#     "name": "ShopTIP",
+#     "email": "shoptipjs@gmail.com",
+#     "password": "abc123",
+#     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVlYjAyOWQ3NTg4ZjY2NWEwYjVhZGQiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY5Mjg2NTMsImV4cCI6MTcyNzUzMzQ1M30.CPP0s9EcIFFSG5ctMZD61n8AM_nQHsyxtGWZGP4iLkM"
+# }
+
+POST {{url_dev}}/product
 Content-Type: application/json
-x-client-id: 66eeb029d7588f665a0b5add
+x-client-id: 66effb1552497a53e93352aa
 x-api-key : 6338e071363abedb525a51516bbbffc0bb8ebd8ee9109497814bc9f44eb7a0ab941186fe5c67dee14e6ee4e68402bf34cfe8515d06426806110a1e9b7e2fb889
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVlYjAyOWQ3NTg4ZjY2NWEwYjVhZGQiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY5Mjg2NTMsImV4cCI6MTcyNzEwMTQ1M30.EUaq8RnzWbrTvZJFebc1IRYl9dyqoUF4JXQt2uopqyU
-x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVlYjAyOWQ3NTg4ZjY2NWEwYjVhZGQiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY5Mjg2NTMsImV4cCI6MTcyNzUzMzQ1M30.CPP0s9EcIFFSG5ctMZD61n8AM_nQHsyxtGWZGP4iLkM
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjcwMDM0NDksImV4cCI6MTcyNzE3NjI0OX0.9Gm6y59ItYd_Y_ohZhy1gadwWbejsU83IxSHK3dr3IU
+x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjcwMDM0NDksImV4cCI6MTcyNzYwODI0OX0.ln6FnBuKLRJ0le8x4FJlQsChv0HT9oQFLuam-TIkc1A
 
 
 {
-    "name": "ShopTIP",
-    "email": "shoptipjs@gmail.com",
-    "password": "abc123",
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVlYjAyOWQ3NTg4ZjY2NWEwYjVhZGQiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY5Mjg2NTMsImV4cCI6MTcyNzUzMzQ1M30.CPP0s9EcIFFSG5ctMZD61n8AM_nQHsyxtGWZGP4iLkM"
+    "product_name": "New Hat",
+    "product_thumb": "product_thumb",
+     "product_quantity": 10,
+    "product_description": "Loram ipsum",
+    "product_price": 50,
+  
+   "product_type": "Clothing",
+    "product_shop": "66effb1552497a53e93352aa",
+    "product_attributes": {
+        "brand": "CSVG",
+        "size": "L",
+        "material": "Au"
+    }
 }
