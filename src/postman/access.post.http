@@ -58,17 +58,15 @@ x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyND
 
 
 {
-    "product_name": "New Hat",
+    "product_name": "Old Hat",
     "product_thumb": "product_thumb",
-     "product_quantity": 10,
+     "product_quantity": 15,
     "product_description": "Loram ipsum",
     "product_price": 50,
-  
    "product_type": "Clothing",
-    "product_shop": "66effb1552497a53e93352aa",
     "product_attributes": {
         "brand": "CSVG",
         "size": "L",
-        "material": "Au"
+        "material": "Ag"
     }
 }
