@@ -58,14 +58,14 @@ x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyND
 
 
 {
-    "product_name": "Old Hat",
+    "product_name": "New _ 1",
     "product_thumb": "product_thumb",
      "product_quantity": 15,
     "product_description": "Loram ipsum",
     "product_price": 50,
-   "product_type": "Clothing",
+   "product_type": "Furniture",
     "product_attributes": {
-        "brand": "CSVG",
+        "brand": "Fur",
         "size": "L",
         "material": "Ag"
     }
