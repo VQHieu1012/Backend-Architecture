@@ -88,14 +88,13 @@ const authenticationV2 = asyncHandler( async (req, res, next) => {
     */
 
     const userId = req.headers[HEADER.CLIENT_ID]
-    console.log(userId)
     if (!userId)  throw new AuthFailureError('Invalid Request')
 
     // 2
     const keyStore = await findByUserId( userId )
-    console.log(keyStore)
     if (!keyStore)  throw new NotFoundError('Not found keyStore')
     // 3 verify token
+    console.log('check')
     if (req.headers[HEADER.REFRESHTOKEN]){
         try {
             const refreshToken = req.headers[HEADER.REFRESHTOKEN]
@@ -123,6 +122,7 @@ const authenticationV2 = asyncHandler( async (req, res, next) => {
         req.keyStore = keyStore
         return next()
     } catch (error) {
+        console.log('err')
         throw error
     }
 })

@@ -16,6 +16,31 @@ class ProductController {
             })
         }).send(res)
     }
+
+    // QUERY //
+    /**
+     * @description Get all Drafts for shop
+     * @param {Number} limit
+     * @param {Number} skip
+     * @returns {JSON}
+     */
+    getAllDraftsForShop = async(req, res, next) => {
+        new SuccessResponse({
+            message: 'Get list Draft success !',
+            metadata: await ProductServiceV2.findAllDraftsForShop({
+                product_shop: req.user.userId
+            })
+        }).send(res)
+    }
+
+    getAllPublishForShop = async(req, res, next) => {
+        new SuccessResponse({
+            message: 'Get list Draft success !',
+            metadata: await ProductServiceV2.findAllPublishForShop({
+                product_shop: req.user.userId
+            })
+        }).send(res)
+    }
 }
 
 module.exports = new ProductController()
