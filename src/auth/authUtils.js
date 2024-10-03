@@ -93,8 +93,8 @@ const authenticationV2 = asyncHandler( async (req, res, next) => {
     // 2
     const keyStore = await findByUserId( userId )
     if (!keyStore)  throw new NotFoundError('Not found keyStore')
+
     // 3 verify token
-    console.log('check')
     if (req.headers[HEADER.REFRESHTOKEN]){
         try {
             const refreshToken = req.headers[HEADER.REFRESHTOKEN]
@@ -104,6 +104,8 @@ const authenticationV2 = asyncHandler( async (req, res, next) => {
             req.keyStore = keyStore
             req.user = decodeUser
             req.refreshToken = refreshToken
+
+            console.log('Authen done!!!')
 
             return next()
         } catch (error) {
