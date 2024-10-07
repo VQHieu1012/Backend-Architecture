@@ -3,6 +3,17 @@
 const { product, electronic, clothing, furniture } = require('../../models/product.model');
 const {Types} = require('mongoose');
 
+const searchProductByUser = async ({ keySearch }) => {
+    const regexSearch = new RegExp(keySearch)
+    const results = await product.find({
+        isPublished: true,
+        $text: { $search: regexSearch}
+    }, {score: {$meta: 'textScore'}})
+    .sort({score: {$meta: 'textScore'}})
+    .lean()
+    return results
+}
+
 const queryProduct = async({ query, limit, skip }) => {
     return await product.find( query ).
     populate('product_shop', 'name email -_id')
@@ -52,5 +63,6 @@ module.exports = {
     findAllDraftsForShop,
     publishProductByShop,
     findAllPublishForShop,
-    unPublishProductByShop
+    unPublishProductByShop,
+    searchProductByUser
 }
