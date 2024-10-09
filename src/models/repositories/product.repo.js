@@ -2,6 +2,7 @@
 
 const { product, electronic, clothing, furniture } = require('../../models/product.model');
 const {Types} = require('mongoose');
+const { getSelectData, unSelectData } = require('../../utils/index');
 
 const searchProductByUser = async ({ keySearch }) => {
     const regexSearch = new RegExp(keySearch)
@@ -12,6 +13,24 @@ const searchProductByUser = async ({ keySearch }) => {
     .sort({score: {$meta: 'textScore'}})
     .lean()
     return results
+}
+
+const findAllProducts = async ({ limit, sort, page, filter, select}) => {
+    const skip = (page - 1) * limit
+    const sortBy = sort === 'ctime'? {_id: -1}: {_id: 1}
+    const products = await product.find( filter )
+    .sort(sortBy)
+    .skip( skip )
+    .limit( limit )
+    .select( getSelectData(select) )
+    .lean()
+    return products
+}
+
+const findProduct = async ({ product_id, unSelect }) => {
+    return await product.findById( product_id )
+                        .select( unSelectData(unSelect) )
+
 }
 
 const queryProduct = async({ query, limit, skip }) => {
@@ -64,5 +83,7 @@ module.exports = {
     publishProductByShop,
     findAllPublishForShop,
     unPublishProductByShop,
-    searchProductByUser
+    searchProductByUser,
+    findAllProducts,
+    findProduct
 }

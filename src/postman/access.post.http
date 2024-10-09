@@ -100,6 +100,14 @@
 # authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjc4Nzg2MzIsImV4cCI6MTcyODA1MTQzMn0.P6yn9bWLEGsXNxH0kc7HgCTBtCdED0KYf1D_c8wcIVg
 # x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjc4Nzg2MzIsImV4cCI6MTcyODQ4MzQzMn0.gLtvQBK53VKisxp6FRvtjZUjkekEbIRsJbrCopBmTrc
 
-GET {{url_dev}}/product/search/quan jean
+# GET {{url_dev}}/product/search/quan jean
+# Content-Type: application/json
+# x-api-key : 6338e071363abedb525a51516bbbffc0bb8ebd8ee9109497814bc9f44eb7a0ab941186fe5c67dee14e6ee4e68402bf34cfe8515d06426806110a1e9b7e2fb889
+
+# GET {{url_dev}}/product/66f7b964073e33328fbd91e9
+# Content-Type: application/json
+# x-api-key : 6338e071363abedb525a51516bbbffc0bb8ebd8ee9109497814bc9f44eb7a0ab941186fe5c67dee14e6ee4e68402bf34cfe8515d06426806110a1e9b7e2fb889
+
+GET {{url_dev}}/product/66f7b964073e33328fbd91e9
 Content-Type: application/json
 x-api-key : 6338e071363abedb525a51516bbbffc0bb8ebd8ee9109497814bc9f44eb7a0ab941186fe5c67dee14e6ee4e68402bf34cfe8515d06426806110a1e9b7e2fb889
