@@ -26,7 +26,7 @@
 # Content-Type: application/json
 # x-client-id: 66ec710ee3d8c659f9208557
 # x-api-key : 64050c9a9480f0a01b20693b93a1c908e143e826cbfe3fcf225dc2f43bbe0e638d4f8a726edac5901f431e5632b48aa83389aea6126332fbfb49ab909fc8e7e2
-# authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVjNzEwZWUzZDhjNjU5ZjkyMDg1NTciLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY3NzI2NTksImV4cCI6MTcyNjk0NTQ1OX0.LfWVc38zoG_Dc3fdnweZt7PJ01tu6v_0NdTQxRu3dOg
+# authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjg1NTQxOTQsImV4cCI6MTcyODcyNjk5NH0.IbPCiSkaQIEUwQQS7Bw36tQzr_8AS3710-14UQEJ4Rw
 
 # {
 #     "name": "ShopTIP",
@@ -82,9 +82,8 @@
 # Content-Type: application/json
 # x-client-id: 66effb1552497a53e93352aa
 # x-api-key : 6338e071363abedb525a51516bbbffc0bb8ebd8ee9109497814bc9f44eb7a0ab941186fe5c67dee14e6ee4e68402bf34cfe8515d06426806110a1e9b7e2fb889
-# authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjc4Nzg2MzIsImV4cCI6MTcyODA1MTQzMn0.P6yn9bWLEGsXNxH0kc7HgCTBtCdED0KYf1D_c8wcIVg
-# x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjc4Nzg2MzIsImV4cCI6MTcyODQ4MzQzMn0.gLtvQBK53VKisxp6FRvtjZUjkekEbIRsJbrCopBmTrc
-
+# authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjg1NTQxOTQsImV4cCI6MTcyODcyNjk5NH0.IbPCiSkaQIEUwQQS7Bw36tQzr_8AS3710-14UQEJ4Rw
+# x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjg1NTQxOTQsImV4cCI6MTcyOTE1ODk5NH0.0cmAdFeV2wSYRIxutay5KE_KYRb-RRb118XNlllEeJg
 
 # POST {{url_dev}}/product/publish/67042eb87df338666d9eae9f
 # Content-Type: application/json
@@ -108,6 +107,24 @@
 # Content-Type: application/json
 # x-api-key : 6338e071363abedb525a51516bbbffc0bb8ebd8ee9109497814bc9f44eb7a0ab941186fe5c67dee14e6ee4e68402bf34cfe8515d06426806110a1e9b7e2fb889
 
-GET {{url_dev}}/product/66f7b964073e33328fbd91e9
+# GET {{url_dev}}/product/66f7b964073e33328fbd91e9
+# Content-Type: application/json
+# x-api-key : 6338e071363abedb525a51516bbbffc0bb8ebd8ee9109497814bc9f44eb7a0ab941186fe5c67dee14e6ee4e68402bf34cfe8515d06426806110a1e9b7e2fb889
+
+
+PATCH {{url_dev}}/product/67042eb87df338666d9eae9f
 Content-Type: application/json
+x-client-id: 66effb1552497a53e93352aa
 x-api-key : 6338e071363abedb525a51516bbbffc0bb8ebd8ee9109497814bc9f44eb7a0ab941186fe5c67dee14e6ee4e68402bf34cfe8515d06426806110a1e9b7e2fb889
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjg1NTQxOTQsImV4cCI6MTcyODcyNjk5NH0.IbPCiSkaQIEUwQQS7Bw36tQzr_8AS3710-14UQEJ4Rw
+x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjg1NTQxOTQsImV4cCI6MTcyOTE1ODk5NH0.0cmAdFeV2wSYRIxutay5KE_KYRb-RRb118XNlllEeJg
+
+{
+  "product_attributes": {
+        "brand": "Chmpis",
+        "size": "XL",
+        "material":null
+      },
+  "product_type": "Clothing",
+  "product_quantity": null
+}
