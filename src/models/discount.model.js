@@ -20,7 +20,7 @@ const discountSchema = new Schema({
     discount_max_uses_per_user: { type: Number, required: true }, // so luong cho phep toi da su dung cho moi user
     discount_min_order_value: { type: Number, required: true },
     discount_shopId: { type: Schema.Types.ObjectId, ref: 'Shop'},
-
+    discount_max_value: {type: Number},
     discount_is_active: { type: Boolean, default: true },
     discount_applies_to: { type: String, required: true, enum: ['all', 'specific'] },
     discount_product_ids: { type: String, default: [] }, // so san pham duoc ap dung
