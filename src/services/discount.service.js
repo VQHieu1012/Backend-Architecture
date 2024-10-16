@@ -2,7 +2,10 @@
 
 const { BadRequestError, NotFoundError } = require("../core/error.response");
 const discount = require("../models/discount.model");
+const { findAllDiscountCodesUnSelect, findAllDiscountCodesSelect } = require("../models/repositories/discount.repo");
+const { findAllProducts } = require("../models/repositories/product.repo");
 const {convertToObjectIdMongodb} = require("../utils");
+
 
 /*
     Discount Services
@@ -83,13 +86,55 @@ class DiscountService {
         }
 
         const { discount_applies_to, discount_product_ids } = foundDiscount
+        let products
         if (discount_applies_to === 'all'){
             // get all products
+            products = await findAllProducts({
+                filter: {
+                    product_shop: convertToObjectIdMongodb(shopId),
+                    isPublished: true
+                },
+                limit: +limit,
+                page: +page,
+                sort: 'ctime',
+                select: ['product_name']
+            })
         }
 
         if (discount_applies_to === 'specific'){
-            // get specific products
+            // get specific products ids
+            products = await findAllProducts({
+                filter: {
+                    _id: {$in: discount_product_ids },
+                    // product_shop: convertToObjectIdMongodb(shopId),
+                    isPublished: true
+                },
+                limit: +limit,
+                page: +page,
+                sort: 'ctime',
+                select: ['product_name']
+            })
         }
+        return products
+    }
+
+    /*
+    Get all discount codes of shop
+    */
+    static async getAllDiscountCodesByShop ({
+        limit, page, shopId
+    }){
+        const discounts = await findAllDiscountCodesUnSelect({
+            limit: +limit,
+            page: +page,
+            filter: {
+                discount_shopId: convertToObjectIdMongodb(shopId),
+                discount_is_active: true
+            },
+            unSelect: ['__v', 'discount_shopId'],
+            model: discount
+        })
+        return discounts
     }
 }
 
