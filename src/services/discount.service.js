@@ -1,8 +1,9 @@
 'use strict'
 
+const { model } = require("mongoose");
 const { BadRequestError, NotFoundError } = require("../core/error.response");
 const discount = require("../models/discount.model");
-const { findAllDiscountCodesUnSelect, findAllDiscountCodesSelect } = require("../models/repositories/discount.repo");
+const { findAllDiscountCodesUnSelect, findAllDiscountCodesSelect, checkDiscountExists } = require("../models/repositories/discount.repo");
 const { findAllProducts } = require("../models/repositories/product.repo");
 const {convertToObjectIdMongodb} = require("../utils");
 
@@ -135,6 +136,81 @@ class DiscountService {
             model: discount
         })
         return discounts
+    }
+
+    /*
+        Apply Discount Code
+        products = [
+            {
+                productId,
+                shopId,
+                quantity,
+                name,
+                price
+            }, 
+            {
+                productId,
+                shopId,
+                quantity,
+                name,
+                price
+            }
+        ]
+    */
+    static async getDiscountAmount({ codeId, userId, shopId, products }){
+
+        const foundDiscount = await checkDiscountExists({
+            model: discount,
+            filter: {
+                discount_code: codeId,
+                discount_shopId: convertToObjectIdMongodb(shopId)
+            } 
+        })
+
+        if (!foundDiscount) throw new NotFoundError('Discount doesn\'t exits')
+
+        const {
+            discount_is_active, discount_max_uses,
+            discount_min_order_value, discount_uses_used,
+            discount_max_uses_per_user
+        } = foundDiscount
+
+        if (!discount_is_active) throw new NotFoundError('Discount expired!')
+        if (!discount_max_uses) throw new NotFoundError('Discount ends!')
+        
+        if (new Date() < new Date(discount_start_date) || new Date() > new Date(discount_end_date)){
+            throw new NotFoundError('Discount expired!')
+        }
+
+        // check xem co gia tri toi thieu hay khong
+        let totalOrder = 0
+        if (discount_min_order_value > 0){
+            // get total
+            totalOrder = products.reduce((acc, product) => {
+                return acc + (product.quantity * product.price)
+            }, 0)
+
+            if (totalOrder < discount_min_order_value){
+                throw new NotFoundError(`Discount requires a minimum order value of ${discount_min_order_value}!`)
+            }
+        }
+        
+        if (discount_max_uses_per_user > 0) {
+            const userUserDiscount = discount_uses_used.find( user => user.userId === userId)
+
+            if (userUserDiscount){
+                //...
+            }
+        }
+
+        // check discount la fixed_amount or percentage
+        const amount = discount_type === 'fixed_amount' ? discount_value : totalOrder * (discount_value / 100)
+        return {
+            totalOrder,
+            discount: amount,
+            totalPrice: totalOrder - amount
+        }
+
     }
 }
 
