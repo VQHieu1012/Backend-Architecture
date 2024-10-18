@@ -210,8 +210,43 @@ class DiscountService {
             discount: amount,
             totalPrice: totalOrder - amount
         }
+    }
 
+    static async deleteDiscountCode({ shopId, codeId }){
+        // const foundDiscount = '';
+        // if(foundDiscount){
+        //     // deleted
+        // }
+        const deleted = await discount.findOneAndDelete({
+            discount_code: codeId,
+            discount_shopId: shopId
+        })
+
+        return deleted
+    }
+
+    // user cancel discount code
+    static async cancelDiscountCode({ codeId, shopId, userId }){
+        const foundDiscount = await checkDiscountExists({
+            model: discount,
+            filter: {
+                discount_code: codeId,
+                discount_shopId: convertToObjectIdMongodb(shopId)
+            }
+        })
+
+        if (!foundDiscount) throw new NotFoundError(`Discount doesn't exists!`)
+
+        const result = await discount.findByIdAndUpdate( foundDiscount._id, {
+            $pull: {
+                discount_users_used: userId,
+            },
+            $inc: {
+                discount_max_uses: 1,
+                discount_users_used: - 1
+            }
+        })
     }
 }
 
-module.exports = {DiscountService}
+module.exports = DiscountService
