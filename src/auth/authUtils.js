@@ -5,7 +5,7 @@ const { asyncHandler } = require('../helpers/asyncHandler')
 const { AuthFailureError, NotFoundError } = require('../core/error.response')
 const { findByUserId } = require('../services/keyToken.service')
 const { keys } = require('lodash')
-
+const { Types } = require('mongoose')
 
 const HEADER = {
     API_KEY: 'x-api-key',
@@ -122,7 +122,8 @@ const authenticationV2 = asyncHandler( async (req, res, next) => {
             throw new AuthFailureError('Invalid UserID')
         }
         req.keyStore = keyStore
-        return next()
+        //req.user  = userId
+        //return next()
     } catch (error) {
         console.log('err')
         throw error

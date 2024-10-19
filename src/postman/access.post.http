@@ -36,40 +36,40 @@
 
 # POST {{url_dev}}/shop/handlerRefreshToken
 # Content-Type: application/json
-# x-client-id: 66eeb029d7588f665a0b5add
+# x-client-id: 66effb1552497a53e93352aa
 # x-api-key : 6338e071363abedb525a51516bbbffc0bb8ebd8ee9109497814bc9f44eb7a0ab941186fe5c67dee14e6ee4e68402bf34cfe8515d06426806110a1e9b7e2fb889
-# authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVlYjAyOWQ3NTg4ZjY2NWEwYjVhZGQiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY5Mjg2NTMsImV4cCI6MTcyNzEwMTQ1M30.EUaq8RnzWbrTvZJFebc1IRYl9dyqoUF4JXQt2uopqyU
-# x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVlYjAyOWQ3NTg4ZjY2NWEwYjVhZGQiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY5Mjg2NTMsImV4cCI6MTcyNzUzMzQ1M30.CPP0s9EcIFFSG5ctMZD61n8AM_nQHsyxtGWZGP4iLkM
+# authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjkzMTk3MTAsImV4cCI6MTcyOTQ5MjUxMH0.V1DGNBJK_0xZdscZ83AY6l44EhbU6WCIR6_r8Z5J_Bk
+# x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjkzMTk3MTAsImV4cCI6MTcyOTkyNDUxMH0.ZqRy8cf2WkqWg5Kf2Ewzm5i3nXl3_tjqMn_ObSK1YNE
 
 
 # {
 #     "name": "ShopTIP",
 #     "email": "shoptipjs@gmail.com",
 #     "password": "abc123",
-#     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVlYjAyOWQ3NTg4ZjY2NWEwYjVhZGQiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjY5Mjg2NTMsImV4cCI6MTcyNzUzMzQ1M30.CPP0s9EcIFFSG5ctMZD61n8AM_nQHsyxtGWZGP4iLkM"
+#     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjkzMTk3MTAsImV4cCI6MTcyOTkyNDUxMH0.ZqRy8cf2WkqWg5Kf2Ewzm5i3nXl3_tjqMn_ObSK1YNE"
 # }
 
-POST {{url_dev}}/product
-Content-Type: application/json
-x-client-id: 66effb1552497a53e93352aa
-x-api-key : 6338e071363abedb525a51516bbbffc0bb8ebd8ee9109497814bc9f44eb7a0ab941186fe5c67dee14e6ee4e68402bf34cfe8515d06426806110a1e9b7e2fb889
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjg1NTQxOTQsImV4cCI6MTcyODcyNjk5NH0.IbPCiSkaQIEUwQQS7Bw36tQzr_8AS3710-14UQEJ4Rw
-x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjg1NTQxOTQsImV4cCI6MTcyOTE1ODk5NH0.0cmAdFeV2wSYRIxutay5KE_KYRb-RRb118XNlllEeJg
+# POST {{url_dev}}/product
+# Content-Type: application/json
+# x-client-id: 66effb1552497a53e93352aa
+# x-api-key : 6338e071363abedb525a51516bbbffc0bb8ebd8ee9109497814bc9f44eb7a0ab941186fe5c67dee14e6ee4e68402bf34cfe8515d06426806110a1e9b7e2fb889
+# authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjg1NTQxOTQsImV4cCI6MTcyODcyNjk5NH0.IbPCiSkaQIEUwQQS7Bw36tQzr_8AS3710-14UQEJ4Rw
+# x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjg1NTQxOTQsImV4cCI6MTcyOTE1ODk5NH0.0cmAdFeV2wSYRIxutay5KE_KYRb-RRb118XNlllEeJg
 
 
-{
-    "product_name": "Máy giặt P",
-    "product_thumb": "product_thumb",
-     "product_quantity": 10,
-    "product_description": "Lorem ipsum",
-    "product_price": 14000,
-   "product_type": "Electronics",
-    "product_attributes": {
-        "manufacturer": "Panasinoc",
-        "model": "PXL03",
-        "color": "black"
-    }
-}
+# {
+#     "product_name": "Máy giặt P",
+#     "product_thumb": "product_thumb",
+#      "product_quantity": 10,
+#     "product_description": "Lorem ipsum",
+#     "product_price": 14000,
+#    "product_type": "Electronics",
+#     "product_attributes": {
+#         "manufacturer": "Panasinoc",
+#         "model": "PXL03",
+#         "color": "black"
+#     }
+# }
 
 # GET {{url_dev}}/product/drafts/all
 # Content-Type: application/json
@@ -82,8 +82,8 @@ x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyND
 # Content-Type: application/json
 # x-client-id: 66effb1552497a53e93352aa
 # x-api-key : 6338e071363abedb525a51516bbbffc0bb8ebd8ee9109497814bc9f44eb7a0ab941186fe5c67dee14e6ee4e68402bf34cfe8515d06426806110a1e9b7e2fb889
-# authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjg1NTQxOTQsImV4cCI6MTcyODcyNjk5NH0.IbPCiSkaQIEUwQQS7Bw36tQzr_8AS3710-14UQEJ4Rw
-# x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjg1NTQxOTQsImV4cCI6MTcyOTE1ODk5NH0.0cmAdFeV2wSYRIxutay5KE_KYRb-RRb118XNlllEeJg
+# authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjkzMTk3NzAsImV4cCI6MTcyOTQ5MjU3MH0.0a5-fXK3jzk7OpWacyex5VFvqXrCRelq5WqBJ1KJ0k4
+# x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3MjkzMTkxNjksImV4cCI6MTcyOTkyMzk2OX0.RD_eRK0QgmK5T9SnusLldiNj9yaQZu0Cjowlvmf0sI4
 
 # POST {{url_dev}}/product/publish/67042eb87df338666d9eae9f
 # Content-Type: application/json

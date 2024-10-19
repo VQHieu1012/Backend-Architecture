@@ -23,7 +23,7 @@ const discountSchema = new Schema({
     discount_max_value: {type: Number},
     discount_is_active: { type: Boolean, default: true },
     discount_applies_to: { type: String, required: true, enum: ['all', 'specific'] },
-    discount_product_ids: { type: String, default: [] }, // so san pham duoc ap dung
+    discount_product_ids: { type: Array, default: [] }, // so san pham duoc ap dung
 
 }, {
     timestamps: true,
@@ -32,5 +32,5 @@ const discountSchema = new Schema({
 
 //Export the model
 module.exports = {
-    discount: model(DOCUMENT_NAME, discountSchema)
+    discount: model(DOCUMENT_NAME, discountSchema),
 }

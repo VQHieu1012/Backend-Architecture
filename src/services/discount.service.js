@@ -2,7 +2,7 @@
 
 const { model } = require("mongoose");
 const { BadRequestError, NotFoundError } = require("../core/error.response");
-const discount = require("../models/discount.model");
+const {discount} = require("../models/discount.model");
 const { findAllDiscountCodesUnSelect, findAllDiscountCodesSelect, checkDiscountExists } = require("../models/repositories/discount.repo");
 const { findAllProducts } = require("../models/repositories/product.repo");
 const {convertToObjectIdMongodb} = require("../utils");
@@ -27,10 +27,12 @@ class DiscountService {
             description, type, value, max_value, max_uses, uses_count, max_uses_per_user
         } = payload
 
+        console.log('shopID is', shopId)
+
         // kiem tra
-        if (new Date() < new Date(start_date) || new Date() > new Date(end_date)){
-            throw new BadRequestError('Discount has expired!')
-        }
+        // if (new Date() < new Date(start_date) || new Date() > new Date(end_date)){
+        //     throw new BadRequestError('Discount has expired!')
+        // }
 
         if (new Date(start_date) >= new Date(end_date)) throw new BadRequestError('Start date equals or greater then End date!')
 
@@ -59,7 +61,7 @@ class DiscountService {
             discount_max_uses_per_user: max_uses_per_user, // so luong cho phep toi da su dung cho moi user
             discount_is_active: is_active,
             discount_applies_to: applies_to,
-            discount_product_ids: applies_to === 'all' ? []: product_ids, // so san pham duoc ap dung
+            discount_product_ids: applies_to === 'all' ? []: product_ids // so san pham duoc ap dung
         })
 
         return newDiscount
