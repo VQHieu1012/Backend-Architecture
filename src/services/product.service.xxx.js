@@ -56,6 +56,7 @@ class ProductFactory {
     }
 
     static async findAllPublishForShop ( {product_shop, limit = 50, skip = 0}){
+        console.log(`[findAllPublishForShop]::${product_shop}`)
         const query = { product_shop, isPublished: true }
         return await findAllPublishForShop({ query, limit, skip})
     }

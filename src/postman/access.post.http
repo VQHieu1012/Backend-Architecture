@@ -6,11 +6,11 @@
 # Content-Type: application/json
 # x-api-key : 6338e071363abedb525a51516bbbffc0bb8ebd8ee9109497814bc9f44eb7a0ab941186fe5c67dee14e6ee4e68402bf34cfe8515d06426806110a1e9b7e2fb889
 
-# {
-#     "name": "ShopTIP",
-#     "email": "shoptipjs@gmail.com",
-#     "password": "abc123"
-# }
+{
+    "name": "Shop",
+    "email": "shop@gmail.com",
+    "password": "abc123"
+}
 
 # POST {{url_dev}}/shop/login
 # Content-Type: application/json
@@ -57,19 +57,19 @@
 # x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmZmIxNTUyNDk3YTUzZTkzMzUyYWEiLCJlbWFpbCI6InNob3B0aXBqc0BnbWFpbC5jb20iLCJpYXQiOjE3Mjg1NTQxOTQsImV4cCI6MTcyOTE1ODk5NH0.0cmAdFeV2wSYRIxutay5KE_KYRb-RRb118XNlllEeJg
 
 
-# {
-#     "product_name": "Máy giặt P",
-#     "product_thumb": "product_thumb",
-#      "product_quantity": 10,
-#     "product_description": "Lorem ipsum",
-#     "product_price": 14000,
-#    "product_type": "Electronics",
-#     "product_attributes": {
-#         "manufacturer": "Panasinoc",
-#         "model": "PXL03",
-#         "color": "black"
-#     }
-# }
+{
+    "product_name": "Máy giặt P",
+    "product_thumb": "product_thumb",
+     "product_quantity": 10,
+    "product_description": "Lorem ipsum",
+    "product_price": 14000,
+   "product_type": "Electronics",
+    "product_attributes": {
+        "manufacturer": "Panasinoc",
+        "model": "PXL03",
+        "color": "black"
+    }
+}
 
 # GET {{url_dev}}/product/drafts/all
 # Content-Type: application/json

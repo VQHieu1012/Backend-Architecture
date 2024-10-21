@@ -92,6 +92,7 @@ const authenticationV2 = asyncHandler( async (req, res, next) => {
 
     // 2
     const keyStore = await findByUserId( userId )
+    console.log(`[keyStore]: ${keyStore}`)
     if (!keyStore)  throw new NotFoundError('Not found keyStore')
 
     // 3 verify token
@@ -122,8 +123,8 @@ const authenticationV2 = asyncHandler( async (req, res, next) => {
             throw new AuthFailureError('Invalid UserID')
         }
         req.keyStore = keyStore
-        //req.user  = userId
-        //return next()
+        req.user  = userId
+        return next()
     } catch (error) {
         console.log('err')
         throw error
