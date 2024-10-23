@@ -1,6 +1,7 @@
 'use strict'
 
-const { cart } = require("../models/cart.model")
+const { cart } = require("../models/cart.model");
+const { getProductById } = require("../models/repositories/product.repo");
 
 /*
     Key features: Cart Service
@@ -59,6 +60,47 @@ class CartService {
 
         // if cart exist and has this product, update quantity
         return await CartService.updateUserCartQuantity({userId, product})
+    }
+
+    // update cart
+    /*
+        shop_order_ids: [
+            {
+                shopId,
+                item_products: [
+                    {
+                    quantity,
+                    price,
+                    shopId,
+                    old_quantity:,
+                    productId
+                    }
+                ],
+                version: 
+            }
+        ]
+    */
+
+    static async addToCartV2({ userId, product={} }){
+        const {productId, quantity, old_quantity } = shop_order_ids[0]?.item_products[0]
+        // check product
+        const foundProduct = await getProductById(productId)
+        if (!foundProduct) throw new NotFoundError('Product not exists!')
+        // compare
+        if(foundProduct.product_shop.toString() !== shop_order_ids[0]?.shopId) {
+            throw new NotFoundError('Product doesn\'t belong to the shop')
+        }
+        if (quantity === 0){
+            // delete
+        }
+
+        return await CartService.updateUserCartQuantity({
+            userId,
+            product: {
+                productId,
+                quantity: quantity - old_quantity
+            }
+        })
     }
 }
 
