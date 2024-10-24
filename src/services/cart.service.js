@@ -102,6 +102,26 @@ class CartService {
             }
         })
     }
+
+    static async deleteUserCart({userId, productId}){
+        const query = {cart_userId: userId, cart_state : 'active'},
+        updateSet = {
+            $pull: {
+                cart_products: {
+                    productId
+                }
+            }
+        }
+        const deleteCart = await cart.updateOne( query, updateSet )
+
+        return deleteCart
+    }
+
+    static async getListUserCart({ userId }){
+        return await cart.findOne({
+            cart_userId: +userId
+        }).lean()
+    }
 }
 
 module.exports = CartService
