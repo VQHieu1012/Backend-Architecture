@@ -43,6 +43,7 @@ class CartService {
     }
     // END REPO CART
     static async addToCart({ userId, product = {} }){
+        // console.log(`UserId:: ${userId}`)
         // check cart if it exists
         const userCart = await cart.findOne({
             cart_userId: userId
