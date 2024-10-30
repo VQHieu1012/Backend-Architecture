@@ -4,7 +4,6 @@
   * Signup [Public]
   * Logout [User]
   * Tokens [User]
-  *   [Updating]
     
 * User
   * Create New User [Admin]
@@ -37,4 +36,7 @@
   * Cancel Discount Code [User]
   
 * Order Services
+  * Create New Order [User]
+  * Query Orders [User]
+  * Query Order Using It's ID [User]
   * [Updating]
