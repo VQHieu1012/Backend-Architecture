@@ -90,7 +90,7 @@ const updateProductById = async ({
 }
 
 const getProductById = async (productId) => {
-    return await product.find({ _id: convertToObjectIdMongodb(productId)}).lean()
+    return await product.findOne({ _id: convertToObjectIdMongodb(productId)}).lean()
 }
 
 module.exports = {

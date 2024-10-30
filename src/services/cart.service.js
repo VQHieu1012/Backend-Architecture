@@ -34,12 +34,12 @@ class CartService {
             cart_state: 'active'
         }, updateSet = {
             $inc: {
-                'cart_product.$.productId': quantity
+                'cart_products.$.quantity': quantity
                 // tim kiem productId co trong cart_products.productId hay khong, $ the hien viec update chinh phan tu do
             }
         }, options = {upsert: true, new: true}
 
-        return await cart.findOneAndUpdate( query, upsertOrInsert, options )
+        return await cart.findOneAndUpdate( query, updateSet, options )
     }
     // END REPO CART
     static async addToCart({ userId, product = {} }){
@@ -82,12 +82,14 @@ class CartService {
         ]
     */
 
-    static async addToCartV2({ userId, product={} }){
+    static async addToCartV2({ userId, shop_order_ids }){
         const {productId, quantity, old_quantity } = shop_order_ids[0]?.item_products[0]
+        console.log({productId, quantity, old_quantity })
         // check product
         const foundProduct = await getProductById(productId)
         if (!foundProduct) throw new NotFoundError('Product not exists!')
         // compare
+        console.log(foundProduct)
         if(foundProduct.product_shop.toString() !== shop_order_ids[0]?.shopId) {
             throw new NotFoundError('Product doesn\'t belong to the shop')
         }
