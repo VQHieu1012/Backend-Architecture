@@ -9,6 +9,7 @@ class CheckoutController {
             message: 'Successful Checkout Review!',
             metadata: await CheckoutService.checkoutReview( req.body )
         }).send(res)
+        
     }
 
     
